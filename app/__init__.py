@@ -1,10 +1,12 @@
 from flask import Flask
-from home.views import init_views
+from admin import admin as admin_blueprint
+from home import home as home_blueprint
 
 
 def create_app():
     app = Flask(__name__)
-    init_views(app)
+    app.register_blueprint(admin_blueprint,url_prefix="/admin")
+    app.register_blueprint(home_blueprint)
     return app
 
 

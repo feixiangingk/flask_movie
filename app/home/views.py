@@ -3,8 +3,8 @@
 # createtime:   2018/4/15 14:15
 # software:     PyCharm
 
-def init_views(app):
+from .import home
 
-    @app.route('/')
-    def hello_world():
-        return 'Hello World!'
+@home.route('/')
+def hello_world():
+    return 'Hello World!'
